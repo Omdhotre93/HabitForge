@@ -17,16 +17,13 @@ export default function Signup() {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/register", {
+      // ✅ Use your Vercel backend URL here
+      const response = await fetch("https://habit-forge-by-om.vercel.app/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-          name,
-          email,
-          password
-        })
+        body: JSON.stringify({ name, email, password })
       });
 
       const data = await response.json();
